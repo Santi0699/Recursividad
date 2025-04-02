@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "vector.h"
-#include "Matrix.h"
-#include "Fraction.h"
+#include "Tdas/vector.h"
+#include "Tdas/Matrix.h"
+#include "Tdas/Fraction.h"
 #include "time.h"
 //1
 int sum_recursive(int n)
@@ -141,14 +141,14 @@ int main ()
 
     //print_piramid(4);
 
-    vector* vectorsin=vector_init(9);
-    vector_add_random2(vectorsin);
-//    vector_add(vectorsin,1);
-//    vector_add(vectorsin,4);
-//    vector_add(vectorsin,2);
-//    vector_add(vectorsin,3);
+    vector* vectorsin=vector_init(4);
+    //vector_add_random2(vectorsin);
+    vector_add(vectorsin,1);
+    vector_add(vectorsin,4);
+    vector_add(vectorsin,2);
+    vector_add(vectorsin,7);
     vector_print2(vectorsin);
-
+/*
     t_elem_vector max_value=vector_max_elem_recursive(vectorsin,vector_size(vectorsin)-1);
 
     printf("%d",(int)max_value);
@@ -168,6 +168,11 @@ int main ()
     vector_print_recursive_in_order(vectorsin,vector_size(vectorsin)-1);
     puts("");
     vector_print_recursive_reverse(vectorsin,vector_size(vectorsin)-1);
+*/
+
+    t_elem_vector number=vector_search_elem_recursive(vectorsin,vector_size(vectorsin)-1,1);
+    
+    printf("\n %d",number);
 
     return 0;
 

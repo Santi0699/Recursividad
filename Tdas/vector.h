@@ -27,6 +27,7 @@ t_elem_vector vector_sum_elem_recursive(vector* v, int index);
 t_elem_vector vector_prom_elem_recursive(vector* v, int index);
 void vector_print_recursive_in_order(vector*v, int index);
 void vector_print_recursive_reverse(vector*v, int index);
+int vector_search_elem_recursive(vector* v, int index, int value);
 
 
 

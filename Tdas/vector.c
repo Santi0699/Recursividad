@@ -290,3 +290,20 @@ void vector_print_recursive_reverse(vector*v, int index)
         }
 
 }
+//9
+int vector_search_elem_recursive(vector* v, int index, int value)
+{
+
+    if(index<0)return -1;
+
+    int pos=index;
+    if(vector_get(v,index)==value)
+    {   
+        return index;
+         
+    }
+ 
+    return  vector_search_elem_recursive(v,index-1,value);
+
+}
+
