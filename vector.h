@@ -21,7 +21,12 @@ void vector_resize(vector** v);
 void vector_remove(vector*v, int index);
 void vector_print2(vector* v);
 void vector_add_random2(vector* v);
-
+t_elem_vector vector_max_elem_recursive(vector* v, int index);
+t_elem_vector vector_min_elem_recursive(vector* v, int index);
+t_elem_vector vector_sum_elem_recursive(vector* v, int index);
+t_elem_vector vector_prom_elem_recursive(vector* v, int index);
+void vector_print_recursive_in_order(vector*v, int index);
+void vector_print_recursive_reverse(vector*v, int index);
 
 
 

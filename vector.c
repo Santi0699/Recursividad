@@ -201,8 +201,92 @@ void vector_add_random2(vector* v)
 
     while(!vector_isfull(v))
     {
-        int value1=rand()%10;
+        t_elem_vector value1=rand()%10;
         vector_add(v,value1);
     }
+
+}
+//8.
+//a.
+t_elem_vector vector_max_elem_recursive(vector* v, int index)
+{
+    if(index==0) return vector_get(v,index);
+
+
+    t_elem_vector temp= vector_get(v,index);
+    t_elem_vector major = vector_max_elem_recursive(v,index-1);
+     if(major<temp)
+     {
+        major=temp;
+     }
+    return major;
+ 
+}
+//b.
+t_elem_vector vector_min_elem_recursive(vector* v, int index)
+{
+    if(index==0) return vector_get(v,index);
+
+
+    t_elem_vector temp= vector_get(v,index);
+    t_elem_vector minor = vector_max_elem_recursive(v,index-1);
+     if(minor>temp)
+     {
+        minor=temp;
+     }
+    return minor;
+ 
+}
+//c.
+t_elem_vector vector_sum_elem_recursive(vector* v, int index)
+{
+    if(index==0) return vector_get(v,index);
+
+
+    t_elem_vector result= vector_get(v,index);
+
+    return vector_sum_elem_recursive(v,index-1)+result;
+    
+}
+//d.
+t_elem_vector vector_prom_elem_recursive(vector* v, int index)
+{
+    if(index==0) return 0;
+
+    t_elem_vector result= vector_sum_elem_recursive(v,index);
+
+    return result/vector_size(v);
+    
+}
+
+//e.
+
+void vector_print_recursive_in_order(vector*v, int index)
+{
+    if(index==0)
+    {
+        printf("|%d|",vector_get(v,index));
+        return;
+    }else
+        {
+            vector_print_recursive_in_order(v,index-1);
+            printf("|%d|",vector_get(v,index));
+        }
+
+}
+
+//e.
+void vector_print_recursive_reverse(vector*v, int index)
+{
+    if(index==0)
+    {
+        printf("|%d|",vector_get(v,index));
+        return;
+    }else
+        {
+            printf("|%d|",vector_get(v,index));
+            vector_print_recursive_reverse(v,index-1);
+
+        }
 
 }
