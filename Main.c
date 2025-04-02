@@ -91,7 +91,29 @@ float pow_recursive(int x, int n)
     return result;
 
 }
+//7
 
+void print_piramid(int n)//Para imprimir una secuencia de numeros sin tener un vector uso un bucle for
+{
+    if(n==0)
+    {
+        return;
+    }
+    
+    for(int i=n; i>=1; i--)
+    {
+        printf("%d",i);
+    }
+    puts(" ");
+
+        
+        print_piramid(n-1);
+        for(int i=n; i>=1; i--)
+        {
+            printf("%d",i);
+        }
+        puts(" ");
+}
 
 int main ()
 {
@@ -108,12 +130,13 @@ int main ()
 
    // print_fibonacci_2(4);
 
-    puts(" ");
+   // puts(" ");
 
     float pepon=0;
     pepon=pow_recursive(2,-4);
-    printf("%.3f",pepon);
+    printf("%.3f\n",pepon);
 
+    print_piramid(4);
 
     return 0;
 
