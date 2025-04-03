@@ -140,7 +140,7 @@ int main ()
     //printf("%.3f\n",pepon);
 
     //print_piramid(4);
-
+/*
     vector* vectorsin=vector_init(4);
     //vector_add_random2(vectorsin);
     vector_add(vectorsin,1);
@@ -148,7 +148,7 @@ int main ()
     vector_add(vectorsin,2);
     vector_add(vectorsin,7);
     vector_print2(vectorsin);
-/*
+
     t_elem_vector max_value=vector_max_elem_recursive(vectorsin,vector_size(vectorsin)-1);
 
     printf("%d",(int)max_value);
@@ -168,11 +168,19 @@ int main ()
     vector_print_recursive_in_order(vectorsin,vector_size(vectorsin)-1);
     puts("");
     vector_print_recursive_reverse(vectorsin,vector_size(vectorsin)-1);
-*/
+
 
     t_elem_vector number=vector_search_elem_recursive(vectorsin,vector_size(vectorsin)-1,1);
     
     printf("\n %d",number);
+*/
+
+    Matrix* matrison=matrix_new(3,6);
+    matrix_add_random(matrison);
+    matrix_print2(matrison);
+
+    int cant=matrix_row_count_element(matrison, 3, matrix_rows(matrison),matrix_columns(matrison));
+    printf("\nLa cantidad de elementos repetidos por fila par es: %d",cant);
 
     return 0;
 

@@ -129,7 +129,7 @@ int gcd(int a, int b) {
 
 void fraction_simplify(Fraction* f) {
     if (!f) {
-        printf("Error: Fracción NULL.\n");
+        printf("Error: Fracciï¿½n NULL.\n");
         return;
     }
     if (f->den == 0) {

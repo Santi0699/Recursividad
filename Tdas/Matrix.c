@@ -70,6 +70,20 @@ void matrix_print(Matrix* m, void (*print)(t_elem_matrix))
     printf("\n");
 
 }
+
+void matrix_print2(Matrix* m)
+{    
+    for (int i = 0; i < m->row; i++) {
+        for(int j=0; j<m->col; j++)
+        {
+            printf("|%d|",m->a[i][j]);
+        }   // Se imprime cada elemento usando la función pasada
+        puts("");
+    }
+    printf("\n");
+
+}
+
 //17
 void matrix_add_random(Matrix* m)
 {
@@ -253,3 +267,33 @@ t_elem_matrix matrix_determinant_recursive(Matrix* m) {
 
     return det;
 }
+
+int es_par(t_elem_matrix numero) {
+    return numero % 2 == 0;
+}
+
+int matrix_row_count_element(Matrix* m, t_elem_matrix value, int row, int col)
+{
+    if (m==NULL)return 0;
+
+    int count=0;
+
+    for(int i=0; i<row; i++)
+    {
+        if(es_par(i))
+        {
+            for(int j=0; j<col; j++)
+            {
+                if(matrix_get(m,i,j)==value)
+                {
+                    count++;
+                }
+            }
+        }
+    }
+
+    return count;
+
+}
+
+

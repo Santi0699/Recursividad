@@ -22,5 +22,7 @@ Matrix* matrix_sum(Matrix* m1, Matrix* m2);
 Matrix* matrix_sum_vector(Matrix* m1, vector* v);
 Matrix* matrix_mult(Matrix* m1, Matrix* m2);
 t_elem_matrix matrix_determinant_recursive(Matrix* m);
+int matrix_row_count_element(Matrix* m, t_elem_matrix value, int row, int col);
+void matrix_print2(Matrix* m);
 
 #endif

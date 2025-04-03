@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define T_Elem Fraction
+//#define T_Elem Fraction
 #define t_elem_vector int
 typedef struct _vector vector;
 
