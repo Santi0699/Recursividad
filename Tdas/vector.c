@@ -306,4 +306,57 @@ int vector_search_elem_recursive(vector* v, int index, int value)
     return  vector_search_elem_recursive(v,index-1,value);
 
 }
+//b.
+int _bin_search(vector* v, int elem, int low, int high)
+{
+    printf("\n%d %d %d",elem,low,high);
+    if(high-low==1)return -2;
+    int pivote= (low+high)/2;
+    printf("\n%d",pivote);
+    int temp=vector_get(v,pivote);
+    printf("\n%d",temp);
+    if(temp==elem) return pivote;
 
+
+    if(elem < temp)
+    {
+        return _bin_search(v,elem,low,pivote);
+    }
+    
+    if(elem > temp)
+    {
+        return _bin_search(v,elem,pivote,high);
+    }
+
+    return -1;
+}
+
+
+int bin_search(vector* v, int elem)
+{
+    return _bin_search(v,elem,0,vector_size(v)-1); //"vector_size(v)-1" aca le estoy pasando el indice en la posicion final
+}
+
+void swap(t_elem_vector* a, t_elem_vector* b) {
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+}
+
+
+void bubble_sort_v2(vector* v, int n) {
+    char swapped = 1;
+    while ((swapped != 0) && (n > 0)) {
+        swapped = 0;
+        for (int i = 1; i < n; i++) {
+
+            t_elem_vector value1=vector_get(v,i - 1);
+            t_elem_vector value2=vector_get(v,i);
+            if (value1 > value2) {
+                swap(&v->a[i - 1], &v->a[i]);
+                swapped = 1;
+            }
+        }
+        n--;
+    }
+}
